@@ -9,11 +9,13 @@ import numpy as np
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('input_path', nargs='?', default='super_data')
+    parser.add_argument('output_path', nargs='?', default='rendered_png')
     return parser.parse_known_args()[0]
 
 
 args = parse_args()
 data_path = Path(args.input_path)
+output_path = Path(args.output_path)
 files = sorted(data_path.glob('*.npy'))
 print(f'Number of files: {len(files)}')
 
@@ -68,7 +70,7 @@ def render_array_to_png(array, image_name, output_dir='rendered_png'):
 
 for i in range(len(data)):
     print(f'\nRendering data[{i}] to PNG...')
-    rendered_sample = render_array_to_png(data[i], f'data_{i}')
+    rendered_sample = render_array_to_png(data[i], f'data_{i}', output_dir=output_path)
     print('saved png =', rendered_sample)
 
 plt.figure(figsize=(6, 6))
