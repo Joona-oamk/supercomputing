@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --account=project_2018026
 #SBATCH --output=/scratch/project_2018026/joleskin/file_analysis/analysis-%j.txt
-#SBATCH --time=00:15:00
-#SBATCH --nodes=4
+#SBATCH --time=00:10:00
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=40
-#SBATCH --partition=small
+#SBATCH --partition=large
 
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
