@@ -7,8 +7,6 @@
 #SBATCH --cpus-per-task=40
 #SBATCH --partition=large
 
-export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
-
 set -euo pipefail
 
 module load python-data
